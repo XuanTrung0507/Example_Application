@@ -1,4 +1,4 @@
-package com.example.exampleapplication.ui.Navigation
+package com.example.exampleapplication.ui.navigation
 
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
