@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.exampleapplication.ui.login.LoginActivity
+import com.example.exampleapplication.ui.navigation.NavigationActivity
+import com.example.exampleapplication.ui.register.RegisterActivity
 
 class SplashScreenActivity : AppCompatActivity() {
 

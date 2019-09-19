@@ -8,6 +8,7 @@
     android:id="@+id/rootView">
 
     <RelativeLayout
+        android:background="@color/colorGray"
         android:id="@+id/viewLoading"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
