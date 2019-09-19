@@ -6,9 +6,12 @@ import android.content.Context
 import android.net.ConnectivityManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
+import android.widget.RelativeLayout
+import com.example.example.data.StorageData
 import kotlinx.android.synthetic.main.activity_base.*
 
 abstract class BaseActivity  : AppCompatActivity() {
@@ -18,6 +21,14 @@ abstract class BaseActivity  : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base)
+
+        val mainView = LayoutInflater.from(this).inflate(layout, null)
+        mainView.layoutParams = RelativeLayout.LayoutParams(
+            RelativeLayout.LayoutParams.MATCH_PARENT,
+            RelativeLayout.LayoutParams.MATCH_PARENT)
+        rootView.addView(mainView)
+        rootView.removeView(viewLoading)
+        StorageData.instance.activity = this
     }
 
     fun isNetworkConnected(): Boolean{
@@ -26,8 +37,8 @@ abstract class BaseActivity  : AppCompatActivity() {
         if (active == null)
         {
             val builder: AlertDialog.Builder = AlertDialog.Builder(this)
-            builder.setMessage("Không có kết nối Internet")
-            builder.setNegativeButton("Cancel"
+            builder.setMessage(R.string.check_internet_connection)
+            builder.setNegativeButton(R.string.cancel
             ) { _, id ->
                 // User cancelled the dialog
             }
