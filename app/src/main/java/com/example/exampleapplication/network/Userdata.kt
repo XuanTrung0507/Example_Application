@@ -46,3 +46,35 @@ data class Users(
     @SerializedName("total_point") @Expose var getTotalPoint: String,
     @SerializedName("total_exp") @Expose var getTotalExp: String
 )
+data class DataProductCollection(
+    @SerializedName("images") @Expose var images: List<DataImageProduct>,
+    @SerializedName("name") @Expose var name: String,
+    @SerializedName("price") @Expose var price: Double,
+    @SerializedName("sale_price") @Expose var sale_price: Double?,
+    @SerializedName("index") @Expose var index: Int
+)
+data class DataImageProduct(
+    @SerializedName("index") @Expose var index: Int,
+    @SerializedName("url") @Expose var url: String?
+)
+data class ListItemProductCollection(
+    @SerializedName("code") @Expose var code: String,
+    @SerializedName("message") @Expose var message: String,
+    @SerializedName("data") @Expose var data: DataItemProductCollection
+)
+data class DataItemProductCollection(
+    @SerializedName("products") @Expose var products: List<DataProductCollection>
+)
+data class DataCollectionGroup(
+    @SerializedName("id") @Expose var id: String,
+    @SerializedName("name") @Expose var name: String,
+    @SerializedName("image") @Expose var image: ImageCollectionGroup
+)
+data class ImageCollectionGroup(
+    @SerializedName("url") @Expose var url: String?
+)
+data class ListCollection(
+    @SerializedName("code") @Expose var code: Int,
+    @SerializedName("message") @Expose var message: String,
+    @SerializedName("data") @Expose var data: List<DataCollectionGroup>
+)

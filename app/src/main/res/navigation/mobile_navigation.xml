@@ -18,16 +18,16 @@
         tools:layout="@layout/fragment_map" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.exampleapplication.ui.navigation.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_laundry_drop_off"
+        android:name="com.example.exampleapplication.ui.navigation.laundrydropoff.LaundryDopOffFragment"
+        android:label="@string/menu__laundry_drop_off"
+        tools:layout="@layout/fragment_laundry_drop_off" />
 
     <fragment
-        android:id="@+id/nav_tools"
-        android:name="com.example.exampleapplication.ui.navigation.tools.ToolsFragment"
-        android:label="@string/menu_tools"
-        tools:layout="@layout/fragment_tools" />
+        android:id="@+id/nav_online_shop"
+        android:name="com.example.exampleapplication.ui.navigation.onlineshop.OnlineShopFragment"
+        android:label="@string/menu_online_shop"
+        tools:layout="@layout/fragment_online_shop" />
 
     <fragment
         android:id="@+id/nav_share"
