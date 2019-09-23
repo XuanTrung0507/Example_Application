@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.ProfileActivity">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="30dp"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgProfile"
+                android:layout_gravity="center"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                app:civ_border_width="2dp"
+                app:civ_border_color="@android:color/holo_blue_bright"
+                android:src="@color/endColor"/>
+            <TextView
+                android:id="@+id/txtTitleUserProfile"
+                android:layout_marginTop="10dp"
+                android:text="LEON ONG"
+                android:textSize="18dp"
+                android:textColor="@color/endColor"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/txtTitleCardNumberProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/endColor"
+                android:textSize="18dp"
+                android:text="X1234567"/>
+            <LinearLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="70dp">
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <TextView
+                        android:text="@string/txtBlance"
+                        android:textColor="@color/endColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                    <View android:layout_width="50dp"
+                        android:layout_height="1dp"
+                        android:background="@color/yellow"/>
+
+                    <TextView
+                        android:id="@+id/txtBalnceProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="S$ ?"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <TextView
+                        android:textColor="@color/endColor"
+                        android:text="@string/txtVouchers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <View android:layout_width="50dp"
+                        android:layout_height="1dp"
+                        android:background="@color/yellow"/>
+                    <TextView
+                        android:id="@+id/txtVouchersProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="S$ ?"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <TextView
+                        android:textColor="@color/endColor"
+                        android:text="@string/txtPoints"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <View android:layout_width="40dp"
+                        android:layout_height="1dp"
+                        android:background="@color/yellow"/>
+                    <TextView
+                        android:id="@+id/txtPointsProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="S$ ?"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnMyAccountProfile"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="80dp">
+                <ImageView
+                    android:src="@drawable/ic_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"/>
+                <TextView
+                    android:id="@+id/txtMyAccount"
+                    android:text="My Account"
+                    android:textColor="@color/endColor"
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="80dp">
+                <ImageView
+                    android:src="@drawable/ic_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"/>
+                <TextView
+                    android:id="@+id/txtAddress"
+                    android:text="My Address"
+                    android:textColor="@color/endColor"
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="80dp">
+                <ImageView
+                    android:src="@drawable/ic_dropoff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"/>
+                <TextView
+                    android:id="@+id/txtMyCard"
+                    android:text="My Cards"
+                    android:textAlignment="center"
+                    android:textColor="@color/endColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
+            <LinearLayout android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:gravity="center">
+                <ImageView
+                    android:src="@drawable/ic_orders"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"/>
+                <TextView
+                    android:id="@+id/txtMyOrder"
+                    android:text="My Order"
+                    android:textColor="@color/endColor"
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
+            <LinearLayout android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/txtRsPwd"
+                    android:text="@string/reset_password"
+                    android:textAlignment="center"
+                    android:textColor="@color/endColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+</ScrollView>

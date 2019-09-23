@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+            android:background="@drawable/background_collection"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+        <ImageView
+                android:src="@drawable/icon_example"
+                android:id="@+id/imgItemsGroupCollection"
+                android:layout_marginTop="10dp"
+                android:layout_width="250dp"
+                android:layout_height="180dp"/>
+        <TextView
+                android:id="@+id/txvNameItemsGroupCollection"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:text="Product 1"
+                android:layout_marginTop="10dp"
+                android:layout_width="200dp"
+                android:layout_height="20dp"/>
+        <LinearLayout
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:background="@drawable/background_collection"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+            <TextView
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textColor="@color/endColor"
+                    android:id="@+id/txvSaleItemGroupCollection"
+                    android:text="12$"
+                    android:textSize="13sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:layout_marginRight="37dp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/endColor"
+                    android:id="@+id/txvPriceItemGroupCollection"
+                    android:text="S$1000"
+                    android:textSize="17sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
+</LinearLayout>

@@ -10,7 +10,7 @@ object ExCheckInput {
     fun verifyEmail(email: String, context: Context): Boolean {
         val inputStr = email as CharSequence
         val pattern = Pattern.compile(ExConstants.EMAIL_VERIFY, Pattern.CASE_INSENSITIVE)
-        val matcher = pattern.matcher(inputStr)
+        val matcher = pattern.matcher(email)
         return if (matcher.matches()) {
             true
         } else {

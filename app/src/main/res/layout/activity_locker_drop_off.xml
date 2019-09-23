@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.lockerdropoff.LockerDropOffActivity">
+
+    <EditText
+        android:id="@+id/edtYourAddress"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_weight="7"
+        android:background="@drawable/background_edit_text"
+        android:drawableRight="@drawable/ic_tracker"
+        android:hint="Your address"
+        android:inputType="text"
+        android:paddingLeft="15dp"
+        android:paddingRight="10dp" />
+    <LinearLayout
+        android:id="@+id/layoutTapLocker"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:background="#FFC107"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/edtYourAddress">
+        <TextView
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFC107"
+            android:id="@+id/TabsMapView"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:text="Map View"
+            android:layout_marginStart="20dp"
+            android:layout_gravity="center"
+            android:background="@drawable/backgroundleft_click"
+            android:layout_weight="1"
+            android:layout_height="35dp"
+            android:layout_width="0dp"/>
+        <TextView
+            android:textColor="#fff"
+            android:id="@+id/TabsListView"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:text="List View"
+            android:layout_marginEnd="20dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/backgroundright"
+            android:layout_width="0dp"
+            android:layout_height="35dp"/>
+    </LinearLayout>
+    <fragment
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mapView"
+        android:layout_below="@id/layoutTapLocker"
+        android:layout_marginTop="0dp">
+    </fragment>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="0dp"
+        android:id="@+id/recyclerViewLockerDropOff"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layoutTapLocker"/>
+</RelativeLayout>
