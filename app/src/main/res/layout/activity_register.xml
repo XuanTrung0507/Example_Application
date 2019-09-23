@@ -67,7 +67,7 @@
             android:id="@+id/edtRegisterEmail"
             android:layout_marginTop="15dp"
             android:maxLines="1"
-            android:inputType="text"
+            android:inputType="textEmailAddress"
             android:paddingStart="10dp"
             android:textColorHint="@color/colorGray"
             android:hint="@string/email"

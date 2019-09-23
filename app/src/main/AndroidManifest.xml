@@ -11,7 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.register.RegisterActivity"></activity>
+        <activity android:name=".ui.profile.ProfileActivity"></activity>
+        <activity android:name=".ui.navigationdrawer.MapFragment2" />
+        <activity android:name=".ui.navigationdrawer.HomeFragment2" />
+        <activity android:name=".ui.navigationdrawer.NavigationDrawerActivity" />
+        <activity android:name=".ui.onlineshop.CollectionItemsActivity" />
+        <activity android:name=".ui.lockerdropoff.LockerDropOffActivity" />
+        <activity android:name=".ui.register.RegisterActivity" />
         <activity android:name=".ui.login.LoginActivity" />
         <activity
             android:name=".SplashScreenActivity"

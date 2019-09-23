@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imgDropOffHeader"
+        android:background="@drawable/drop_off_header"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="0dp"
+        android:layout_alignParentTop="true"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        android:layout_below="@+id/imgDropOffHeader"
+        android:layout_above="@+id/imgDropOffFooter"
+        android:layout_marginBottom="0dp">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioGroup
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:textColor="@color/endColor"
+                    android:text="Kios Drop - Off"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radioButtonKiosDropOff"/>
+                <RadioButton
+                    android:textColor="@color/endColor"
+                    android:layout_marginTop="15dp"
+                    android:text="Locker Drop - Off"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radioButtonLockerDropOff"/>
+                <RadioButton
+                    android:textColor="@color/endColor"
+                    android:layout_marginTop="15dp"
+                    android:text="Home Collection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radioButtonHomeCollection"/>
+            </RadioGroup>
+            <Button
+                android:textColor="#fff"
+                android:background="@drawable/background_button"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:text="Next"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bntNextLaunDropOff" />
+        </LinearLayout>
+
+    </ScrollView>
+    <ImageView
+        android:id="@+id/imgDropOffFooter"
+        android:background="@drawable/drop_off_footer"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"/>
+</RelativeLayout>

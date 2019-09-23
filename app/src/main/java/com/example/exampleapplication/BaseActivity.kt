@@ -11,6 +11,7 @@ import android.view.View
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.RelativeLayout
+import androidx.appcompat.widget.Toolbar
 import com.example.example.data.StorageData
 import kotlinx.android.synthetic.main.activity_base.*
 
@@ -67,6 +68,13 @@ abstract class BaseActivity  : AppCompatActivity() {
             val imm = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(windowToken, 0)
         }
+    }
 
+    fun addToolbar(){
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
     }
 }

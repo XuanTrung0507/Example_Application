@@ -51,4 +51,48 @@ object AuthenticateFunctions {
             }
         })
     }
+
+    fun getItemProductCollection(
+        activity: BaseActivity,
+        collection_id : String,
+        callBackGetItemProduct : (response : Response<ListItemProductCollection>) -> Unit)
+    {
+        activity.showProgressLoading()
+        val  dataItemsProduct : Call<ListItemProductCollection> = CallAPI.create()!!.getCollectionItem(collection_id)
+        dataItemsProduct.enqueue(object : Callback<ListItemProductCollection>{
+            override fun onFailure(call: Call<ListItemProductCollection>, t: Throwable) {
+                activity.dismissProgressLoading()
+                Toast.makeText(activity,"Error",Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onResponse(call: Call<ListItemProductCollection>, response: Response<ListItemProductCollection>) {
+                activity.dismissProgressLoading()
+                if (response.body()?.message == ExConstants.LOGIN_SUCCESS){
+                    callBackGetItemProduct(response)
+                }
+                else{
+                    Toast.makeText(activity,""+ response.body()?.message, Toast.LENGTH_SHORT).show()
+                }
+            }
+        })
+    }
+    fun getAllCollection(activity: BaseActivity,callBackGetAllCollection : (response : Response<ListCollection>) -> Unit){
+        activity.showProgressLoading()
+        val  dataAllCollection : Call<ListCollection> = CallAPI.create()!!.getAllCollection()
+        dataAllCollection.enqueue(object  : Callback<ListCollection>{
+            override fun onFailure(call: Call<ListCollection>, t: Throwable) {
+                activity.dismissProgressLoading()
+                Toast.makeText(activity,"Error",Toast.LENGTH_SHORT).show()
+            }
+            override fun onResponse(call: Call<ListCollection>, response: Response<ListCollection>) {
+                activity.dismissProgressLoading()
+                if(response.body()?.message == ExConstants.LOGIN_SUCCESS){
+                    callBackGetAllCollection(response)
+                }
+                else{
+                    Toast.makeText(activity,""+ response.message(), Toast.LENGTH_SHORT).show()
+                }
+            }
+        })
+    }
 }

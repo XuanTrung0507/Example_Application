@@ -39,12 +39,12 @@ class RegisterActivity : BaseActivity() {
                 Toast.makeText(this,R.string.check_length_input,Toast.LENGTH_SHORT).show()
             return false
         }
-        if (edtRegisterPass.text.toString()!= edtRegisterConfirmPass.text.toString()){
-            Toast.makeText(this,R.string.check_confirm_pass,Toast.LENGTH_SHORT).show()
-            return false
-        }
         if(ExCheckInput.verifyEmail(edtRegisterEmail.text.toString(),this)){
             Toast.makeText(this,R.string.check_input_verify_mail,Toast.LENGTH_SHORT).show()
+            return false
+        }
+        if (edtRegisterPass.text.toString()!= edtRegisterConfirmPass.text.toString()){
+            Toast.makeText(this,R.string.check_confirm_pass,Toast.LENGTH_SHORT).show()
             return false
         }
         return true

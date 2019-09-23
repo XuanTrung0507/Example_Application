@@ -6,4 +6,5 @@ object ExExtraKey {
     const val FULL_NAME: String = "full_name"
     const val USER_NAME: String = "user_name"
     const val EMAIL: String = "email"
+    const val COLLECTION_ID = "collection_id"
 }
