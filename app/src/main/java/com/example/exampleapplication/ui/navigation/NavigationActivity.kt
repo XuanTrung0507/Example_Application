@@ -2,6 +2,7 @@ package com.example.exampleapplication.ui.navigation
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Layout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -12,11 +13,14 @@ import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.LinearLayout
 import com.example.example.data.StorageData
 import com.example.exampleapplication.BaseActivity
 import com.example.exampleapplication.R
 import com.example.exampleapplication.ui.login.LoginActivity
+import com.example.exampleapplication.ui.profile.ProfileActivity
 import kotlinx.android.synthetic.main.app_bar_navigation.*
+import kotlinx.android.synthetic.main.nav_header_navigation.*
 
 class NavigationActivity : BaseActivity() {
     override val layout: Int
@@ -32,6 +36,7 @@ class NavigationActivity : BaseActivity() {
 
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
+        //val header : LinearLayout = findViewById(R.id.header_profile)
         val navController = findNavController(R.id.nav_host_fragment)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -65,8 +70,6 @@ class NavigationActivity : BaseActivity() {
         }
     }
 
-
-
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when(item?.itemId){
             R.id.action_logout -> {
@@ -77,7 +80,6 @@ class NavigationActivity : BaseActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-    
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.

@@ -1,9 +1,7 @@
 package com.example.exampleapplication.ui.onlineshop
 
 import android.os.Bundle
-import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.bk.internollo.UI.OnlineShopping.ItemGroupAdapter
 import com.example.example.Network.AuthenticateFunctions
 import com.example.example.Network.ListItemProductCollection
@@ -20,11 +18,7 @@ class CollectionItemsActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val toolbar: Toolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayShowTitleEnabled(false)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setDisplayShowHomeEnabled(true)
+        addToolbar()
         txv_toolbar.text = "Shop"
 
         recyclerItemGroupCollection.layoutManager = LinearLayoutManager(this)
