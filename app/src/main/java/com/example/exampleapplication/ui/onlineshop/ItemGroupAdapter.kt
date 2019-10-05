@@ -39,7 +39,7 @@ class ItemGroupAdapter (private var itemsGroup : List<DataProductCollection>) : 
                 Picasso.get()
                     .load(itemsCollection.images[0].url)
                     .placeholder(R.drawable.icon_example)
-                    .error(R.drawable.icon_example)
+                    .error(R.drawable.ic_error_black_24dp)
                     .fit()
                     .into(imgGroup)
             }

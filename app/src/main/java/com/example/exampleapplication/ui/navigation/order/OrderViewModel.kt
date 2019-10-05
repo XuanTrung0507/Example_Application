@@ -1,10 +1,10 @@
-package com.example.exampleapplication.ui.navigation.map
+package com.example.exampleapplication.ui.navigation.order
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class MapViewModel : ViewModel() {
+class OrderViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         value = "This is gallery Fragment"

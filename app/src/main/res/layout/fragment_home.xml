@@ -1,23 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-        <Button
-            android:text="Profile"
-            android:id="@+id/bntpro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <ImageView
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/bntpro"
-            android:layout_marginTop="0dp"
-            android:src="@drawable/img_home"
-            tools:ignore="MissingConstraints">
-
-        </ImageView>
+            android:layout_height="wrap_content">
+            <ImageView
+                android:scaleType="fitXY"
+                android:src="@drawable/sky"
+                android:layout_width="match_parent"
+                android:layout_height="120dp">
+            </ImageView>
+            <TextView
+                android:paddingStart="10dp"
+                android:textColor="@color/endColor"
+                android:textSize="18sp"
+                android:gravity="center_vertical"
+                android:text="What do you to do"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"/>
+            <TextView
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:background="#6A0D2DDF"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <LinearLayout
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="3dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_marginEnd="35dp"
+                        android:src="@drawable/ic_shop_24dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp">
+                    </ImageView>
+                    <ImageView
+                        android:layout_marginEnd="35dp"
+                        android:src="@drawable/ic_orders"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp">
+                    </ImageView>
+                    <ImageView
+                        android:id="@+id/img_home_user"
+                        android:src="@drawable/ic_username"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp">
+                    </ImageView>
+            </LinearLayout>
+            <TextView
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:background="#6A0D2DDF"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <TextView
+                android:textColor="@color/endColor"
+                android:textSize="18sp"
+                android:paddingStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="Danh Mục"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_directory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </androidx.recyclerview.widget.RecyclerView>
+            <TextView
+                android:textSize="18sp"
+                android:paddingStart="10dp"
+                android:textColor="@color/endColor"
+                android:layout_marginTop="15dp"
+                android:text="Bộ sưu tập"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <androidx.recyclerview.widget.RecyclerView
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/recycler_introduce"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+            </androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
 </RelativeLayout>

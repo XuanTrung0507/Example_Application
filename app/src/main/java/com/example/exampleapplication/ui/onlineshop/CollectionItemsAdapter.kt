@@ -33,7 +33,7 @@ class CollectionItemsAdapter (private var collection : List<DataCollectionGroup>
             com.squareup.picasso.Picasso.get()
                 .load("https://sohanews.sohacdn.com/2018/11/6/photo-1-1541483747699708526153.jpg")
                 .placeholder(R.drawable.icon_example)
-                .error(R.drawable.icon_example)
+                .error(R.drawable.ic_error_black_24dp)
                 .fit()
                 .into(imgCollection)
             imgCollection.setOnClickListener {

@@ -7,9 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.GridLayout
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -17,9 +15,8 @@ import com.bk.internollo.UI.OnlineShopping.CollectionItemsAdapter
 import com.example.example.Network.AuthenticateFunctions
 import com.example.example.Network.ListCollection
 import com.example.example.data.ExExtraKey.COLLECTION_ID
-import com.example.exampleapplication.BaseActivity
+import com.example.exampleapplication.base.BaseActivity
 import com.example.exampleapplication.R
-import com.example.exampleapplication.ui.navigation.NavigationActivity
 import com.example.exampleapplication.ui.onlineshop.CollectionItemsActivity
 import kotlinx.android.synthetic.main.fragment_online_shop.*
 import kotlinx.android.synthetic.main.fragment_online_shop.view.*
@@ -37,7 +34,7 @@ class OnlineShopFragment : Fragment() {
         toolsViewModel = ViewModelProviders.of(this).get(OnlineShopViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_online_shop, container, false)
         root.recyclerOnlineShop.layoutManager = GridLayoutManager(activity, 2,
-            GridLayout.VERTICAL, false) as RecyclerView.LayoutManager?
+            GridLayout.VERTICAL, false)
         root.recyclerOnlineShop.setHasFixedSize(true)
         AuthenticateFunctions.getAllCollection(activity as BaseActivity, ::returnBodyAllCollection)
         return root

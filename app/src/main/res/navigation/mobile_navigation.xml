@@ -12,10 +12,10 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_map"
-        android:name="com.example.exampleapplication.ui.navigation.map.MapFragment"
-        android:label="@string/menu_map"
-        tools:layout="@layout/fragment_map" />
+        android:id="@+id/nav_order"
+        android:name="com.example.exampleapplication.ui.navigation.order.OrderFragment"
+        android:label="Order"
+        tools:layout="@layout/fragment_order" />
 
     <fragment
         android:id="@+id/nav_laundry_drop_off"

@@ -2,12 +2,13 @@ package com.example.example.Network
 
 
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface APIServer {
+    @Headers("Content-Type: application/json; charset=UTF-8")
+    @POST("user/register")
+    fun registerUser(@Body registerUsers: RegisterUsers): Call<DataUsers>
+
     @POST("user/login/")
     fun loginUser(@Body loginUsers: LoginUsers): Call<CallApiDataLogin>
 

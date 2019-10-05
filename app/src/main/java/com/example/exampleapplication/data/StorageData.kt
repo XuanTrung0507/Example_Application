@@ -1,8 +1,7 @@
 package com.example.example.data
 
 import android.content.Context
-import android.content.SharedPreferences
-import com.example.exampleapplication.BaseActivity
+import com.example.exampleapplication.base.BaseActivity
 
 class StorageData {
     companion object {

@@ -7,9 +7,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.profile.ProfileActivity">
-    <include
-        layout="@layout/toolbar">
-    </include>
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_profile"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/background_color_app"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <TextView
+                android:id="@+id/txv_title_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/title_activity_navigation"
+                android:textSize="20sp" />
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -137,7 +157,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/btnMyAccountProfile"
+                android:id="@+id/layoutMyAccount"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_weight="1"
@@ -158,6 +178,10 @@
                     android:textColor="@color/endColor" />
             </LinearLayout>
 
+            <TextView
+                android:background="#19000000"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"/>
 
             <LinearLayout
 
@@ -181,6 +205,10 @@
                     android:textColor="@color/endColor" />
             </LinearLayout>
 
+            <TextView
+                android:background="#19000000"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -188,56 +216,17 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
-
                 <ImageView
+                    android:src="@drawable/ic_logout"
                     android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:src="@drawable/ic_dropoff" />
+                    android:layout_height="wrap_content"/>
 
                 <TextView
-                    android:id="@+id/txtMyCard"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="My Cards"
-                    android:textAlignment="center"
-                    android:textColor="@color/endColor" />
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:src="@drawable/ic_orders" />
-
-                <TextView
-                    android:id="@+id/txtMyOrder"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="My Order"
-                    android:textAlignment="center"
-                    android:textColor="@color/endColor" />
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/txtRsPwd"
+                    android:textSize="18sp"
+                    android:id="@+id/txv_log_out"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/reset_password"
+                    android:text="Log Out"
                     android:textAlignment="center"
                     android:textColor="@color/endColor" />
             </LinearLayout>
