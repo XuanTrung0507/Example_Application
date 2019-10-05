@@ -6,4 +6,7 @@ object ExConstants{
     const val RC_SIGN_IN = 112
     const val LOGIN_SUCCESS = "Success"
     const val EMAIL_VERIFY = "[a-zA-Z0-9._-]+@[a-z]+\\\\.+[a-z]+"
+    const val COLLECTION_ID = "collection_id"
+    const val ITEM_NAME = "item_name"
+    const val ITEM_PRICE = "item_price"
 }

@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit
 
 class RetrofitClients {
     companion object {
-        var retrofit: Retrofit? = null
+        private var retrofit: Retrofit? = null
 
         private var okHttpClient = OkHttpClient.Builder()
             .addInterceptor(Interceptor {
@@ -28,7 +28,7 @@ class RetrofitClients {
             .retryOnConnectionFailure(true)
             .build()
 
-        var gson = GsonBuilder().setLenient().create()!!
+        private var gson = GsonBuilder().setLenient().create()!!
 
         fun getClient(baseURl: String) : Retrofit?{
             retrofit = Retrofit.Builder()
@@ -38,7 +38,6 @@ class RetrofitClients {
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build()
             return retrofit
-
         }
     }
 }

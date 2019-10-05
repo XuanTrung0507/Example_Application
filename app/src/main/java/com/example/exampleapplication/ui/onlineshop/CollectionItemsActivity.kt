@@ -6,20 +6,23 @@ import com.bk.internollo.UI.OnlineShopping.ItemGroupAdapter
 import com.example.example.Network.AuthenticateFunctions
 import com.example.example.Network.ListItemProductCollection
 import com.example.example.data.ExExtraKey.COLLECTION_ID
-import com.example.exampleapplication.BaseActivity
+import com.example.exampleapplication.base.BaseActivity
 import com.example.exampleapplication.R
 import kotlinx.android.synthetic.main.activity_collection_items.*
-import kotlinx.android.synthetic.main.toolbar.*
 import retrofit2.Response
 
 class CollectionItemsActivity : BaseActivity() {
-    override val layout: Int
-        get() = R.layout.activity_collection_items
+    override fun getLayoutID(): Int {
+        return R.layout.activity_collection_items
+    }
 
+//    override fun onCreateActivity(savedInstanceState: Bundle?) {
+//
+//    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        addToolbar()
-        txv_toolbar.text = "Shop"
+        addToolbar(toolbar_collection)
+        txv_toolbar_collection.text = "Shop"
 
         recyclerItemGroupCollection.layoutManager = LinearLayoutManager(this)
         recyclerItemGroupCollection.setHasFixedSize(true)

@@ -3,26 +3,33 @@ package com.example.exampleapplication.ui.login
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.example.example.Network.AuthenticateFunctions
 import com.example.example.data.StorageData
-import com.example.exampleapplication.BaseActivity
+import com.example.exampleapplication.base.BaseActivity
 import com.example.exampleapplication.R
 import com.example.exampleapplication.ui.navigation.NavigationActivity
 import com.example.exampleapplication.ui.register.RegisterActivity
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : BaseActivity() {
-    override val layout: Int
-        get() = R.layout.activity_login
+    override fun getLayoutID(): Int {
+        return R.layout.activity_login
+    }
+
+//    override fun onCreateActivity(savedInstanceState: Bundle?) {
+//
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         isNetworkConnected()
         if(StorageData.instance.tokenUser != ""){
             startActivity(Intent(this@LoginActivity, NavigationActivity::class.java))
+            finish()
         }
+        Log.e("aaa",StorageData.instance.tokenUser.toString())
         bnt_login.setOnClickListener {
             if (isNetworkConnected()) {
                 if (verifyInputCharacters()){
@@ -35,7 +42,6 @@ class LoginActivity : BaseActivity() {
                 }
             }
         }
-
         tv_login_register.setOnClickListener {
             startActivity(Intent(this,RegisterActivity::class.java))
         }

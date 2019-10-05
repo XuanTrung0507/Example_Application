@@ -4,7 +4,7 @@
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@drawable/icon_example">
+            android:src="@mipmap/ic_launcher_foreground">
 
         </bitmap>
     </item>

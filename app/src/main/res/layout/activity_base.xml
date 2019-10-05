@@ -4,21 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BaseActivity"
+    tools:context=".base.BaseActivity"
     android:id="@+id/rootView">
 
     <RelativeLayout
-        android:background="@color/colorGray"
+        android:background="#86000000"
         android:id="@+id/viewLoading"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <ProgressBar
-            android:id="@+id/progess"
+            android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true">
-
         </ProgressBar>
     </RelativeLayout>
 

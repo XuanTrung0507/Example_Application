@@ -3,6 +3,14 @@ package com.example.example.Network
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
+data class RegisterUsers(
+    @SerializedName("email") @Expose var email: String,
+    @SerializedName("full_name") @Expose var fullName: String,
+    @SerializedName("password") @Expose var pwd: String,
+    @SerializedName("phone") @Expose var phone: String,
+    @SerializedName("username") @Expose var userName: String
+)
+
 data class LoginUsers(
     @SerializedName("email") @Expose var email: String,
     @SerializedName("password") @Expose var fullName: String
@@ -38,7 +46,6 @@ data class DataCardsUser(
 data class Users(
     @SerializedName("email") @Expose var getEmail: String,
     @SerializedName("full_name") @Expose var getFullName: String,
-    @SerializedName("password") @Expose var getPwd: String,
     @SerializedName("phone") @Expose var getPhone: String,
     @SerializedName("referee_phone") @Expose var getRefereePhone: String,
     @SerializedName("username") @Expose var getUserName: String,
@@ -77,4 +84,19 @@ data class ListCollection(
     @SerializedName("code") @Expose var code: Int,
     @SerializedName("message") @Expose var message: String,
     @SerializedName("data") @Expose var data: List<DataCollectionGroup>
+)
+data class DataUsers(
+    @SerializedName("code") @Expose var code: String,
+    @SerializedName("message") @Expose var message: String,
+    @SerializedName("data") @Expose var data: Data
+)
+data class Data(
+    @SerializedName("token") @Expose var token: String?,
+    @SerializedName("user") @Expose var users: Users?,
+    @SerializedName("cards") @Expose var cards: MutableList<Cards>?
+)
+data class Cards(
+    @SerializedName("card_number") @Expose var getCardsNumber: String,
+    @SerializedName("balance") @Expose var getBalance: Int,
+    @SerializedName("active") @Expose var getActive: Boolean
 )

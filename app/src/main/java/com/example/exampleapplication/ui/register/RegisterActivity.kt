@@ -2,21 +2,42 @@ package com.example.exampleapplication.ui.register
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.exampleapplication.BaseActivity
+import com.example.example.Network.AuthenticateFunctions
+import com.example.exampleapplication.base.BaseActivity
 import com.example.exampleapplication.R
 import com.example.exampleapplication.data.ExCheckInput
 import com.example.exampleapplication.ui.login.LoginActivity
 import com.example.exampleapplication.ui.navigation.NavigationActivity
-import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_register.*
 
 class RegisterActivity : BaseActivity() {
-    override val layout: Int
-        get() = R.layout.activity_register
+    override fun getLayoutID(): Int {
+        return R.layout.activity_register
+    }
 
+//    override fun onCreateActivity(savedInstanceState: Bundle?) {
+//        txvRegister.setOnClickListener {
+//            startActivity(Intent(this,LoginActivity::class.java))
+//        }
+//        bntRegister.setOnClickListener {
+//            if (isNetworkConnected()){
+//                if (verifyInputRegister()) {
+//                    AuthenticateFunctions.callApiRegister(
+//                        this,
+//                        edtRegisterEmail.text.toString(),
+//                        edtRegisterFullName.text.toString(),
+//                        edtRegisterPass.text.toString(),
+//                        edtRegisterNumberPhone.text.toString(),
+//                        edtRegisterUserName.text.toString(),
+//                        ::callbackRegister
+//                    )
+//                    startActivity(Intent(this, NavigationActivity::class.java))
+//                }
+//            }
+//        }
+   // }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         txvRegister.setOnClickListener {
@@ -25,6 +46,15 @@ class RegisterActivity : BaseActivity() {
         bntRegister.setOnClickListener {
             if (isNetworkConnected()){
                 if (verifyInputRegister()) {
+                    AuthenticateFunctions.callApiRegister(
+                        this,
+                        edtRegisterEmail.text.toString(),
+                        edtRegisterFullName.text.toString(),
+                        edtRegisterPass.text.toString(),
+                        edtRegisterNumberPhone.text.toString(),
+                        edtRegisterUserName.text.toString(),
+                        ::callbackRegister
+                    )
                     startActivity(Intent(this, NavigationActivity::class.java))
                 }
             }
@@ -49,4 +79,18 @@ class RegisterActivity : BaseActivity() {
         }
         return true
     }
+    private fun callbackRegister() {
+        AuthenticateFunctions.callApiLogin(
+            this@RegisterActivity, edtRegisterEmail.text.toString(), edtRegisterPass.text.toString(),
+            ::callback
+        )
+    }
+    private fun callback() {
+        Intent(this, NavigationActivity::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+            startActivity(this)
+            finish()
+        }
+    }
 }
+

@@ -66,4 +66,24 @@
     <string name="reset_password">
         <u>Reset Password</u>
     </string>
+    <string name="information">
+        Thông số kĩ thuật : \n
+        - CPU: Intel Core i7-4800QM Processor 8*2.7 Ghz (8Mb Cache, Tubo 3.7 Ghz)\n
+        - RAM: 8GB  DDR3, 1600 \n
+        - GPU: Intel Graphics HD 4600 + Nvidia Quadro K1100M (2GB dedicated GDDR5) \n
+        - HDD/SSD: SSD 256GB \n
+        - Display: 15.6 inch Anti-glare LED Backlit High Definition Full HD (1920x1080) \n
+        - Optical drive: DVD-RW \n
+        - Connectivity: LAN 10/100/1000 Mbps, Wi-Fi 802.11 \n
+        - Other features: 4x USB 3.0, DisplayPort, 3.5 mm audio jack, HDMI, VGA, card reader (SD, MMC, MS) \n
+        - Battery: 85Wh (9cell), \n
+        - Thickness: 39.9 mm \n
+        - Weight: 2.9 kg (6.5 lbs) \n
+    </string>
+    <string name="introduce">
+        Giới thiệu sản phẩm: \n
+        - Đây cũng là một dòng máy trạm hầm hố với cấu hình khủng đến từ hãng Dell. Với cấu hình này bạn hoàn toàn có thể chơi game làm đồ hoạ… thoải mái. Hãy  cùng mình tìm hiểu thêm về dòng sản phẩm này nhé. \n
+        - Như những người anh em tiền nhiệm thì Dell Precision m4800 có thiết kế cực kỳ góc cạnh. Thiết kế dạng hộp vuông kiểu cũ với các đường nét đơn giản nhưng lại toát lên sự mạnh mẽ đầy cá tính.\n
+          Vỏ ngoài cũng được thiết kế từ hợp kim nhôm với khung sườn magie cấu trúc tổ ong chịu lực chịu va đập mạnh.
+    </string>
 </resources>
