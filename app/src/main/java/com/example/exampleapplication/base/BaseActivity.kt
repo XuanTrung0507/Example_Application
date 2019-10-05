@@ -1,7 +1,8 @@
-package com.example.exampleapplication
+package com.example.exampleapplication.base
 
 import android.app.Activity
 import android.app.AlertDialog
+import android.app.Dialog
 import android.content.Context
 import android.net.ConnectivityManager
 import androidx.appcompat.app.AppCompatActivity
@@ -13,22 +14,25 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.RelativeLayout
 import androidx.appcompat.widget.Toolbar
 import com.example.example.data.StorageData
+import com.example.exampleapplication.R
 import kotlinx.android.synthetic.main.activity_base.*
 
 abstract class BaseActivity  : AppCompatActivity() {
 
-    abstract val layout: Int
+    abstract fun getLayoutID(): Int
+    //abstract fun onCreateActivity(savedInstanceState: Bundle?)
 
+    var dialog : Dialog? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_base)
-
-        val mainView = LayoutInflater.from(this).inflate(layout, null)
-        mainView.layoutParams = RelativeLayout.LayoutParams(
-            RelativeLayout.LayoutParams.MATCH_PARENT,
-            RelativeLayout.LayoutParams.MATCH_PARENT)
-        rootView.addView(mainView)
-        rootView.removeView(viewLoading)
+        setContentView(getLayoutID())
+      //  onCreateActivity(savedInstanceState)
+//        val mainView = LayoutInflater.from(this).inflate(getLayoutID(), null)
+//        mainView.layoutParams = RelativeLayout.LayoutParams(
+//            RelativeLayout.LayoutParams.MATCH_PARENT,
+//            RelativeLayout.LayoutParams.MATCH_PARENT)
+//        rootView.addView(mainView)
+//        rootView.removeView(viewLoading)
         StorageData.instance.activity = this
     }
 
@@ -39,8 +43,9 @@ abstract class BaseActivity  : AppCompatActivity() {
         {
             val builder: AlertDialog.Builder = AlertDialog.Builder(this)
             builder.setMessage(R.string.check_internet_connection)
-            builder.setNegativeButton(R.string.cancel
-            ) { _, id ->
+            builder.setNegativeButton(
+                R.string.cancel
+            ) { _, _ ->
                 // User cancelled the dialog
             }
             builder.create().show()
@@ -50,17 +55,23 @@ abstract class BaseActivity  : AppCompatActivity() {
     }
 
     fun showProgressLoading() {
-        hideKeyboard()
-        rootView.removeView(viewLoading)
-        rootView.addView(viewLoading)
-        progess.visibility = View.VISIBLE
+//        hideKeyboard()
+//        rootView.removeView(viewLoading)
+//        rootView.addView(viewLoading)
+//        progressBar.visibility = View.VISIBLE
+        dialog = Dialog(this,android.R.style.Theme_Translucent_NoTitleBar)
+        val view = this.layoutInflater.inflate(R.layout.full_screen_progress_bar,null)
+        dialog?.setContentView(view)
+        dialog?.setCancelable(false)
+        dialog?.show()
         window.setFlags(
             WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
             WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
     }
     fun dismissProgressLoading() {
-        rootView.removeView(viewLoading)
-        progess.visibility = View.GONE
+//        rootView.removeView(viewLoading)
+//        progressBar.visibility = View.GONE
+        dialog?.dismiss()
         window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
     }
     private fun hideKeyboard() {
@@ -70,8 +81,8 @@ abstract class BaseActivity  : AppCompatActivity() {
         }
     }
 
-    fun addToolbar(){
-        val toolbar: Toolbar = findViewById(R.id.toolbar)
+    fun addToolbar(toolbar: Toolbar){
+        //val toolbar: Toolbar = findViewById(R.id.toolbar_myaccout)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

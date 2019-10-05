@@ -11,10 +11,10 @@
     android:layout_marginTop="10dp">
     <ImageView
         android:id="@+id/imgColection"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
         android:scaleType="centerInside"
-        android:src="@drawable/icon_example" />
+        android:src="@drawable/laptop2" />
 
     <TextView
         android:background="#22000000"
