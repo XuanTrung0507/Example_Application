@@ -56,7 +56,8 @@ object AuthenticateFunctions {
         val callRegister:Call<DataUsers> = apiService.registerUser(
             RegisterUsers(
                 email,
-                fullName, pwd,
+                fullName,
+                pwd,
                 phone,
                 username
             )
@@ -106,6 +107,7 @@ object AuthenticateFunctions {
                     callBackGetItemProduct(response)
                 }
                 else{
+                    //Toast.makeText(activity, "")
                     Toast.makeText(activity,""+ response.body()?.message, Toast.LENGTH_SHORT).show()
                 }
             }

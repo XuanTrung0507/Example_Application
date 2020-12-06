@@ -61,7 +61,8 @@
         android:layout_height="match_parent"
         android:id="@+id/mapView"
         android:layout_below="@id/layoutTapLocker"
-        android:layout_marginTop="0dp">
+        android:layout_marginTop="0dp"
+        tools:layout="@layout/activity_base">
     </fragment>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_marginTop="0dp"
